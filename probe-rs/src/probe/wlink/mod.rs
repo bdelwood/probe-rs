@@ -101,6 +101,8 @@ pub enum RiscvChip {
     CH58X = 0x07,
     /// CH32V003 Qingke-V2A series
     CH32V003 = 0x09,
+    // CH32V002/4/5/7 Qingke-V2C series
+    CH32V00X = 0x4E,
     // The only reference I can find is <https://www.wch.cn/news/606.html>.
     /// RISC-V EC controller, undocumented.
     CH8571 = 0x0A, // 10,
@@ -126,6 +128,7 @@ impl RiscvChip {
             0x06 => Some(RiscvChip::CH32V30X),
             0x07 => Some(RiscvChip::CH58X),
             0x09 => Some(RiscvChip::CH32V003),
+            0x4E => Some(RiscvChip::CH32V00X),
             0x0A => Some(RiscvChip::CH8571),
             0x0B => Some(RiscvChip::CH59X),
             0x0C => Some(RiscvChip::CH643),
@@ -143,6 +146,7 @@ impl RiscvChip {
                 | RiscvChip::CH32V20X
                 | RiscvChip::CH32V30X
                 | RiscvChip::CH32V003
+                | RiscvChip::CH32V00X
                 | RiscvChip::CH643
                 | RiscvChip::CH32L103
                 | RiscvChip::CH32X035
